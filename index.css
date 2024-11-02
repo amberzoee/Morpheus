@@ -1,0 +1,29 @@
+html,
+
+
+header {
+
+
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background-image: url("Photos/Main\ page\ header\ 2.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #522623;
+
+    img {
+        float: right;
+        margin-left: 2em;
+        margin-bottom: 0em;
+        margin-right: 2em;
+        margin-top: 1em;
+        width: 5em;
+        height: 5em;
+
+    }
+
+
+
+
+}
