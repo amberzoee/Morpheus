@@ -124,8 +124,8 @@ header {
 
 @media only screen and (max-width: 786px) {
     .nav-button {
-        display:contents;
-        position:relative;
+        display: contents;
+        position: fixed;
     }
 
     .nav-menu.responsive {
