@@ -20,8 +20,8 @@
                 <ul>
                     <li><a href="index.html" class="link">Home</a></li>
                     <li><a href="dreamDiary.html" class="link">Dream Diary</a></li>
-                    <li><a href="dreamWorlds.html" class="link">Dream Worlds</a></li>
-                    <li><a href="myWorld.html" class="link">My World</a></li>
+                    <li><a href="dreamWorlds.html" class="link">Dream World</a></li>
+                    <li><a href="myWorld.html" class="link">My Dreams</a></li>
                 </ul>
             </div>
             <div class="nav-button">
@@ -31,3 +31,87 @@
 
         </nav>
     </div>
+
+    <main>
+        <h1 class="page-title">The World of Dreams</h1>
+        <section class="image-grid" id="imageGrid"></section>
+    </main>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p id="dream-description"></p>
+        </div>
+    </div>
+
+    <script>
+        // Sample dreams data
+        const dreams = [
+            {
+                description: "It would start with me being alone in a house in the kitchen...",
+                date: "03/11/2024",
+                imageSrc: "Photos/Dream 1.jpg"
+            },
+            {
+                description: "I slept for 5 hours and dreamed I was falling through different lives...",
+                date: "03/11/2024",
+                imageSrc: "Photos/dream 2.jpg"
+            },
+            {
+                description: "My house was suddenly full of water, and all the townsfolk decided...",
+                date: "03/11/2024",
+                imageSrc: "Photos/Dream 3.jpg"
+            }
+        ];
+
+        function displayDreams() {
+            const imageGrid = document.getElementById('imageGrid');
+
+            // Clear the existing images
+            imageGrid.innerHTML = '';
+
+            // Display only the first dream's image
+            if (dreams.length > 0) {
+                const firstDream = dreams[0]; // Get the first dream
+
+                const dreamImageDiv = document.createElement('div');
+                dreamImageDiv.classList.add('dream-image');
+                dreamImageDiv.setAttribute('data-description', firstDream.description); // Add description for modal
+
+                // Create an image element
+                const image = document.createElement('img');
+                image.src = firstDream.imageSrc; // Use the actual image source from the dream object
+                image.alt = 'Dream Image 1';
+
+                // Create a date display
+                const dateDisplay = document.createElement('p');
+                dateDisplay.classList.add('entry-date');
+                dateDisplay.textContent = `Date: ${firstDream.date}`;
+
+                // Append image and date to the new image div
+                dreamImageDiv.appendChild(image);
+                dreamImageDiv.appendChild(dateDisplay);
+
+                // Append the new image div to the image grid
+                imageGrid.appendChild(dreamImageDiv);
+
+                // Bind click event to the dream image
+                dreamImageDiv.addEventListener('click', () => {
+                    const description = dreamImageDiv.getAttribute('data-description');
+                    document.getElementById('dream-description').textContent = description;
+                    document.getElementById('modal').style.display = 'flex';
+                });
+            }
+        }
+
+        // Close the modal
+        document.querySelector('.close').addEventListener('click', () => {
+            document.getElementById('modal').style.display = 'none';
+        });
+
+        // Initial display of dreams on page load
+        displayDreams();
+    </script>
+
+</body>
+</html>

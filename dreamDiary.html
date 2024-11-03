@@ -20,8 +20,8 @@
                 <ul>
                     <li><a href="index.html" class="link">Home</a></li>
                     <li><a href="dreamDiary.html" class="link">Dream Diary</a></li>
-                    <li><a href="dreamWorlds.html" class="link">Dream Worlds</a></li>
-                    <li><a href="myWorld.html" class="link">My World</a></li>
+                    <li><a href="dreamWorlds.html" class="link">Dream World</a></li>
+                    <li><a href="myWorld.html" class="link">My Dreams</a></li>
                 </ul>
             </div>
             <div class="nav-button">
@@ -59,37 +59,38 @@
         <section class="main_section">
 
             <form action="myWorld.html" method="get">
-                
-                    <h4>Dream Diary Entry</h4>
-                    <label for="fname">Date (dd/mm/yy): </label>
-                    <input type="text" id="fdate" name="fdate"><br><br>
-                    <label for="lname">Dream Entry: </label>
-                    <textarea type="text" id="dreamEntry" name="dreamDescription" rows="10" cols="50"
-                        placeholder="Describe your dream here..." required></textarea><br><br>
-                    <input type="submit" value="Submit">
-                
+
+                <h4>Dream Diary Entry</h4>
+                <label for="fname">Date (dd/mm/yy): </label>
+                <input type="text" id="fdate" name="fdate"><br><br>
+                <label for="lname">Dream Entry: </label>
+                <textarea type="text" id="dreamEntry" name="dreamDescription" rows="10" cols="50"
+                    placeholder="Describe your dream here... e.g. I slept for 5 hours and dreamed I was falling through different lives where I was rich, then a Vietnam vet which was violent, and than a garbage man. I was happiest as the garbage man cuz I’d keep getting high fives."
+                    required></textarea><br><br>
+                <input type="submit" value="Submit">
+
             </form>
         </section>
     </main>
 
     <script>
-        document.getElementById('dreamForm').addEventListener('submit', function(event) {
+        document.getElementById('dreamForm').addEventListener('submit', function (event) {
             event.preventDefault(); // Prevent the form from submitting normally
-    
+
             // Get the dream description and date from the form
             const dreamDescription = document.getElementById('dreamEntry').value;
             const entryDate = document.getElementById('fdate').value;
-    
+
             // Store the dream entry in localStorage
             const dreams = JSON.parse(localStorage.getItem('dreams')) || [];
             dreams.push({ description: dreamDescription, date: entryDate });
             localStorage.setItem('dreams', JSON.stringify(dreams));
-    
+
             // Redirect to the myWorlds page
             window.location.href = 'myWorlds.html';
         });
     </script>
-    
+
 </body>
 
 </html>
