@@ -31,7 +31,7 @@
 
         </nav>
     </div>
-    
+
     <h1>
         <div class="about-section" <about>
             <h2>Welcome To Your Dream Diary</h2>
@@ -48,27 +48,48 @@
             </about>
         </div>
     </h1>
-    
+
     <h3>
         <div class="decor">
             <div class="content">
             </div>
     </h3>
-    
+
     <main>
         <section class="main_section">
-            <h4>Dream Diary Entry</h4>
-            <form action="dreamWorlds.html" method="post"></form>
-            <form action="/action_page.php">
-                <label for="fname">Date (dd/mm/yy): </label>
-                <input type="text" id="fdate" name="fdate"><br><br>
-                <label for="lname">Dream Entry: </label>
-                <textarea type="text" id="dreamEntry" name="dreamDescription" rows="10" cols="50"
-                    placeholder="Describe your dream here..." required></textarea><br><br>
-                <input type="submit" value="Submit">
+
+            <form action="myWorld.html" method="get">
+                
+                    <h4>Dream Diary Entry</h4>
+                    <label for="fname">Date (dd/mm/yy): </label>
+                    <input type="text" id="fdate" name="fdate"><br><br>
+                    <label for="lname">Dream Entry: </label>
+                    <textarea type="text" id="dreamEntry" name="dreamDescription" rows="10" cols="50"
+                        placeholder="Describe your dream here..." required></textarea><br><br>
+                    <input type="submit" value="Submit">
+                
             </form>
         </section>
     </main>
+
+    <script>
+        document.getElementById('dreamForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the form from submitting normally
+    
+            // Get the dream description and date from the form
+            const dreamDescription = document.getElementById('dreamEntry').value;
+            const entryDate = document.getElementById('fdate').value;
+    
+            // Store the dream entry in localStorage
+            const dreams = JSON.parse(localStorage.getItem('dreams')) || [];
+            dreams.push({ description: dreamDescription, date: entryDate });
+            localStorage.setItem('dreams', JSON.stringify(dreams));
+    
+            // Redirect to the myWorlds page
+            window.location.href = 'myWorlds.html';
+        });
+    </script>
+    
 </body>
 
 </html>

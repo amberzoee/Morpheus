@@ -10,8 +10,8 @@ header {
     background-image: url("Photos/Untitled design (9).jpg");
     background-repeat: no-repeat;
     left: 0;
-    background-size:25%;
-    
+    background-size: 25%;
+
 }
 
 
@@ -207,17 +207,27 @@ main {
     background-repeat: no-repeat;
     background-size: cover;
     background-color: #2A374D;
+
 }
+
+h4 {
+    text-align: center;
+    font-size: 2em;
+    color: white;
+}
+
 form {
     background-color: #522623;
     padding: 2em;
-    border-radius: 10px;
+    border-radius: 5px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     margin: 2em auto;
     /* Centers the form */
     max-width: 600px;
     /* Limits the width of the form */
+    background-repeat: no-repeat;
 }
+
 
 label {
     font-family: Georgia, 'Times New Roman', Times, serif;
@@ -234,7 +244,7 @@ textarea {
     width: 100%;
     /* Full width */
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid #000000;
     border-radius: 5px;
     font-family: Georgia, 'Times New Roman', Times, serif;
     margin-bottom: 1.5em;
