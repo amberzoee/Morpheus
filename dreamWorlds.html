@@ -26,7 +26,7 @@
             </div>
             <div class="nav-button">
                 <a href="profile.html"><button class="btn" id="profileBtn">Profile</button></a>
-                <a href="help.html"><button class="btn" id="helpBtn">Help</button></a>
+                
             </div>
 
         </nav>
@@ -94,23 +94,23 @@
             dreams.forEach(dream => {
                 const dreamImageDiv = document.createElement('div');
                 dreamImageDiv.classList.add('dream-image');
-                dreamImageDiv.setAttribute('data-description', dream.description); // Add description for modal
+                dreamImageDiv.setAttribute('data-description', dream.description); 
 
-                // Create an image element (replace with the actual image source)
+                
                 const image = document.createElement('img');
-                image.src = 'path/to/your/image.jpg'; // Placeholder image source
+                image.src = 'path/to/your/image.jpg'; 
                 image.alt = 'Dream Image';
 
-                // Create a date display
+               
                 const dateDisplay = document.createElement('p');
                 dateDisplay.classList.add('entry-date');
                 dateDisplay.textContent = `Date: ${dream.date}`;
 
-                // Append image and date to the new image div
+                
                 dreamImageDiv.appendChild(image);
                 dreamImageDiv.appendChild(dateDisplay);
 
-                // Append the new image div to the image grid
+                
                 imageGrid.appendChild(dreamImageDiv);
             });
         }

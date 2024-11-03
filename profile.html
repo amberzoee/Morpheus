@@ -3,9 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Profile</title>
+    <link rel="stylesheet" href="profile.css">
 </head>
+
 <body>
-    
+
+
+    <div class="profile-wrapper">
+        <h1 class="profile-title">My Profile</h1>
+        
+        <div class="profile-info">
+            <img src="Photos/Avatar.jpg" alt="Profile Picture" class="profile-pic">
+            <div class="profile-details">
+                <h2 id="username">Username: dfgt</h2>
+                <p id="join-date">Joined: November 2024</p>
+            </div>
+        </div>
+
+        <div class="profile-stats">
+            <h2>Dream Stats</h2>
+            <ul>
+                <li>Total Dreams Logged: 4</li>
+                <li>Private Dreams: 2</li>
+                <li>Shared Dreams: 2</li>
+            </ul>
+        </div>
+
+        <button class="edit-btn" onclick="editProfile()">Edit Profile</button>
+    </div>
+
+    <script>
+        function editProfile() {
+            alert('Edit profile feature coming soon!');
+        }
+    </script>
 </body>
 </html>
