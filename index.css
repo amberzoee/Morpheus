@@ -6,8 +6,6 @@ header {
     background-attachment: scroll;
     z-index: 10;
     box-sizing: border-box;
-
-
 }
 
 
@@ -18,7 +16,7 @@ nav {
     background-size: contain;
     background-color: none;
     width: fit-content;
-    position: relative;
+    position: absolute;
     z-index: 5;
     top: 200px;
     font-family: Georgia, 'Times New Roman', Times, serif;
@@ -34,7 +32,7 @@ nav {
 }
 
 .nav {
-    position:absolute;
+    position: fixed;
     top: 0;
     display: flex;
     justify-content: space-around;
@@ -50,7 +48,7 @@ nav {
     background-image: url("Photos/Untitled\ design\ \(9\).jpg");
     background-repeat: no-repeat;
     background-size: contain;
-    position:absolute;
+    position: absolute;
     top: 2em;
     left: 0;
     width: 200%;
@@ -81,6 +79,8 @@ nav {
 }
 
 .nav-button .btn {
+    z-index: 1000;
+    position: relative;
     width: 130px;
     height: 40px;
     font-weight: 500;
@@ -97,7 +97,7 @@ nav {
 
 
 .nav-menu-btn {
-    display: none;
+    display:contents;
 }
 
 .top span {
@@ -132,7 +132,7 @@ header {
     }
 
     .nav-menu {
-        position: fixed;
+        position:absolute;
         top: -800px;
         display: flex;
         justify-content: center;
