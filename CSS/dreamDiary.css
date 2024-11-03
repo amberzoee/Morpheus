@@ -6,10 +6,7 @@ header {
     background-attachment: scroll;
     z-index: 10;
     box-sizing: border-box;
-
-
 }
-
 
 nav {
     box-sizing: border-box;
@@ -17,7 +14,7 @@ nav {
     padding: 1em 2em;
     background-size: contain;
     background-color: none;
-    width:fit-content;
+    width: fit-content;
     position: relative;
     z-index: 5;
     top: 200px;
@@ -50,8 +47,8 @@ nav {
 .nav-logo p {
     background-image: url("Photos/Untitled\ design\ \(9\).jpg");
     background-repeat: no-repeat;
-    background-size:contain;
-    position:fixed;
+    background-size: contain;
+    position: fixed;
     top: 2em;
     left: 0;
     width: 20%;
@@ -61,7 +58,7 @@ nav {
 }
 
 .nav-menu ul {
-    display:flex;
+    display: flex;
 }
 
 .nav-menu ul li {
@@ -124,8 +121,8 @@ header {
 
 @media only screen and (max-width: 786px) {
     .nav-button {
-        display:contents;
-        position:relative;
+        display: contents;
+        position: fixed;
     }
 
     .nav-menu.responsive {
@@ -133,7 +130,7 @@ header {
     }
 
     .nav-menu {
-        position:fixed;
+        position: fixed;
         top: -800px;
         display: flex;
         justify-content: center;
@@ -150,7 +147,7 @@ header {
     }
 
     .nav-menu-btn {
-        display:contents;
+        display: contents;
     }
 
     .nav-menu-btn i {
