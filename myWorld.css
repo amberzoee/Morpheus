@@ -171,6 +171,16 @@ main {
     padding: 2em;
 }
 
+h2 {
+    background-color: #2A374D;
+    font-size: 1.4em;
+    text-align: left;
+    color: #fff;
+    position:fixed;
+    padding: 2em;
+    left: 0;
+    margin-top: -12em;
+}
 .page-title {
     font-size: 4em;
     color: #fff;

@@ -33,9 +33,51 @@
     </div>
 
     <main>
-        <h1 class="page-title">The World of Dreams</h1>
+        <h1 class="page-title">Dream World</h1>
         <section class="image-grid" id="imageGrid"></section>
     </main>
+
+
+    <h2>
+        <div class="about-section" <about>
+            <p2>A unique space where dreams come to life and connect people through shared imagination. Here, users
+                can explore
+                a gallery of dream-inspired visuals, each crafted from personal dream entries. By hovering over an
+                image, you’ll
+                reveal the dreamer’s description, offering a glimpse into their world of thoughts, feelings, and
+                nighttime
+                adventures. Connect with others by reacting, commenting, or simply enjoying the diverse tapestry of
+                dreams
+                shared by the community. Whether you’re curious about the dreams of others or just looking to share
+                your own,
+                Dream World is a place to discover, connect, and be inspired.</p2>
+            </about>
+        </div>
+    </h2>
+
+
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p id="dream-description"></p>
+        </div>
+    </div>
+
+    <div class="image-grid">
+        <div class="dream-image"
+            data-description="I had a dream last night that I was at a Red Hot Chili Peppers concert and Anthony Kiedis went into the crowd. He got KO’d and they had to cancel the rest of the show.">
+            <img src="Photos/Dream 4.jpg" alt="Dream Image 4">
+            <p class="entry-sate">User: dfgt</p>
+        </div>
+        <div class="dream-image"
+            data-description="One early morning I woke up from a nightmare and went out to the kitchen to get some coffee. My dad was also in there – about an hour earlier than he was usually up. I told him about this dream I had where I saw this giant scorpion crawling on the ceiling of an all white room above me and I couldn’t move until the scorpion started falling on my face when I woke up">
+            <img src="Photos/dream 5.jpg" alt="Dream Image 2">
+            <p class="entry-sate">User: gwst</p>
+        </div>
+
+    </div>
+
 
     <div id="modal" class="modal">
         <div class="modal-content">
@@ -45,48 +87,24 @@
     </div>
 
     <script>
-        // Sample dreams data
-        const dreams = [
-            {
-                description: "It would start with me being alone in a house in the kitchen...",
-                date: "03/11/2024",
-                imageSrc: "Photos/Dream 1.jpg"
-            },
-            {
-                description: "I slept for 5 hours and dreamed I was falling through different lives...",
-                date: "03/11/2024",
-                imageSrc: "Photos/dream 2.jpg"
-            },
-            {
-                description: "My house was suddenly full of water, and all the townsfolk decided...",
-                date: "03/11/2024",
-                imageSrc: "Photos/Dream 3.jpg"
-            }
-        ];
-
         function displayDreams() {
+            const dreams = JSON.parse(localStorage.getItem('dreams')) || [];
             const imageGrid = document.getElementById('imageGrid');
 
-            // Clear the existing images
-            imageGrid.innerHTML = '';
-
-            // Display only the first dream's image
-            if (dreams.length > 0) {
-                const firstDream = dreams[0]; // Get the first dream
-
+            dreams.forEach(dream => {
                 const dreamImageDiv = document.createElement('div');
                 dreamImageDiv.classList.add('dream-image');
-                dreamImageDiv.setAttribute('data-description', firstDream.description); // Add description for modal
+                dreamImageDiv.setAttribute('data-description', dream.description); // Add description for modal
 
-                // Create an image element
+                // Create an image element (replace with the actual image source)
                 const image = document.createElement('img');
-                image.src = firstDream.imageSrc; // Use the actual image source from the dream object
-                image.alt = 'Dream Image 1';
+                image.src = 'path/to/your/image.jpg'; // Placeholder image source
+                image.alt = 'Dream Image';
 
                 // Create a date display
                 const dateDisplay = document.createElement('p');
                 dateDisplay.classList.add('entry-date');
-                dateDisplay.textContent = `Date: ${firstDream.date}`;
+                dateDisplay.textContent = `Date: ${dream.date}`;
 
                 // Append image and date to the new image div
                 dreamImageDiv.appendChild(image);
@@ -94,24 +112,28 @@
 
                 // Append the new image div to the image grid
                 imageGrid.appendChild(dreamImageDiv);
-
-                // Bind click event to the dream image
-                dreamImageDiv.addEventListener('click', () => {
-                    const description = dreamImageDiv.getAttribute('data-description');
-                    document.getElementById('dream-description').textContent = description;
-                    document.getElementById('modal').style.display = 'flex';
-                });
-            }
+            });
         }
+
+        // Show the modal with the dream description
+        document.querySelectorAll('.dream-image').forEach(image => {
+            image.addEventListener('click', () => {
+                const description = image.getAttribute('data-description');
+                document.getElementById('dream-description').textContent = description;
+                document.getElementById('modal').style.display = 'flex';
+            });
+        });
 
         // Close the modal
         document.querySelector('.close').addEventListener('click', () => {
             document.getElementById('modal').style.display = 'none';
         });
 
-        // Initial display of dreams on page load
+        // Execute the function to display dreams
         displayDreams();
+
     </script>
 
 </body>
+
 </html>
