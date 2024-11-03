@@ -97,7 +97,7 @@ nav {
 
 
 .nav-menu-btn {
-    display:contents;
+    display: contents;
 }
 
 .top span {
@@ -123,7 +123,12 @@ header {
 
 @media only screen and (max-width: 786px) {
     .nav-button {
-        display: contents;
+        display: none;
+        position: fixed;
+    }
+
+    .nav-logo {
+        display:contents;
         position: fixed;
     }
 
@@ -132,7 +137,7 @@ header {
     }
 
     .nav-menu {
-        position:absolute;
+        position: absolute;
         top: -800px;
         display: flex;
         justify-content: center;
@@ -165,4 +170,114 @@ header {
     .nav-menu-btn i:hover {
         background: rgba(255, 255, 255, 0.15);
     }
+}
+
+h1 {
+    box-sizing: border-box;
+    margin: 0;
+    margin-top: -8em;
+    padding: 2em;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #444A41;
+
+    h2 {
+        text-align: center;
+        font: bolder;
+        font-size: 2em;
+        color: #fff;
+        font-family: Georgia, 'Times New Roman', Times, serif
+    }
+
+    p2 {
+        text-align: right;
+        font-size: 0.8em;
+        color: white;
+    }
+}
+
+h3 {
+    box-sizing: border-box;
+    margin: 0;
+    margin-top: 0;
+    padding: 1em;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #9F6932;
+}
+
+main {
+    box-sizing: border-box;
+    margin: 0;
+    margin-top: 0;
+    padding: 2em;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #2A374D;
+}
+form {
+    background-color: #522623;
+    padding: 2em;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin: 2em auto;
+    /* Centers the form */
+    max-width: 600px;
+    /* Limits the width of the form */
+}
+
+label {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: #ffffff;
+    font-weight: bold;
+    display: block;
+    /* Makes labels block elements */
+    margin-bottom: 0.5em;
+    /* Space between label and input */
+}
+
+input[type="date"],
+textarea {
+    width: 100%;
+    /* Full width */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin-bottom: 1.5em;
+    /* Space between inputs */
+    box-sizing: border-box;
+    /* Ensures padding is included in the width */
+}
+
+textarea {
+    resize: vertical;
+    /* Allows users to resize vertically only */
+}
+
+input[type="submit"] {
+    background-color: #000000;
+    /* Button background */
+    color: #fff;
+    /* Text color */
+    border: none;
+    /* Remove default border */
+    border-radius: 5px;
+    /* Rounded corners */
+    padding: 10px 15px;
+    /* Button padding */
+    cursor: pointer;
+    /* Pointer cursor on hover */
+    font-size: 1em;
+    /* Button text size */
+    transition: background-color 0.3s ease;
+    /* Smooth background change */
+}
+
+input[type="submit"]:hover {
+    background-color: #7a4a4a;
+    /* Darker shade on hover */
 }
