@@ -3,9 +3,14 @@ html,
 
 header {
     background-color: #522623;
-    background-attachment: scroll;
+    background-attachment: fixed;
+    margin: 2em;
     z-index: 10;
     box-sizing: border-box;
+    background-image: url("Photos/Untitled design (9).jpg");
+    background-repeat: no-repeat;
+    left: 0;
+    
 }
 
 
@@ -14,9 +19,8 @@ nav {
     margin: 0;
     padding: 1em 2em;
     background-size: contain;
-    background-color: none;
     width: fit-content;
-    position: absolute;
+    position: fixed;
     z-index: 5;
     top: 200px;
     font-family: Georgia, 'Times New Roman', Times, serif;
@@ -44,18 +48,7 @@ nav {
     z-index: 100;
 }
 
-.nav-logo p {
-    background-image: url("Photos/Untitled\ design\ \(9\).jpg");
-    background-repeat: no-repeat;
-    background-size: contain;
-    position: absolute;
-    top: 2em;
-    left: 0;
-    width: 200%;
-    height: 200%;
-    margin: 0;
-    padding: 0;
-}
+
 
 .nav-menu ul {
     display: flex;
@@ -124,12 +117,7 @@ header {
 @media only screen and (max-width: 786px) {
     .nav-button {
         display: none;
-        position: fixed;
-    }
-
-    .nav-logo {
-        display:contents;
-        position: fixed;
+        position: absolute;
     }
 
     .nav-menu.responsive {
@@ -137,7 +125,7 @@ header {
     }
 
     .nav-menu {
-        position: absolute;
+        position: fixed;
         top: -800px;
         display: flex;
         justify-content: center;
@@ -146,6 +134,7 @@ header {
         height: 90vh;
         backdrop-filter: blur(20px);
         transition: .3s;
+        background-color: #522623;
     }
 
     .nav-menu ul {
