@@ -61,7 +61,7 @@ nav {
 }
 
 .nav-menu ul {
-    display: flex;
+    display:flex;
 }
 
 .nav-menu ul li {
@@ -124,7 +124,8 @@ header {
 
 @media only screen and (max-width: 786px) {
     .nav-button {
-        display: none;
+        display:contents;
+        position:relative;
     }
 
     .nav-menu.responsive {
@@ -132,7 +133,7 @@ header {
     }
 
     .nav-menu {
-        position: absolute;
+        position:fixed;
         top: -800px;
         display: flex;
         justify-content: center;
@@ -149,7 +150,7 @@ header {
     }
 
     .nav-menu-btn {
-        display: block;
+        display:contents;
     }
 
     .nav-menu-btn i {
